@@ -56,23 +56,6 @@ Script will prompt for email/password and create one admin user.
 - **User Dashboard** – `/dashboard` (protected, user role).
 - **Admin Dashboard** – `/admin` (protected, admin role).
 
-## Deploy backend on Render
-
-1. Go to [render.com](https://render.com), sign in, and click **New +** → **Web Service**.
-2. Connect your GitHub account and select the repo `Hranker-assignment`.
-3. Configure the service:
-   - **Name:** e.g. `hranker-auth-api`
-   - **Root Directory:** `backend`
-   - **Runtime:** Node
-   - **Build Command:** `npm install`
-   - **Start Command:** `npm start`
-4. Under **Environment**, add:
-   - `MONGO_URI` = your MongoDB Atlas connection string (e.g. `mongodb+srv://...`)
-   - `JWT_SECRET` = a long random string for signing tokens  
-   (Render sets `PORT` automatically; the app already uses `process.env.PORT || 5000`.)
-5. Click **Create Web Service**. After the first deploy you’ll get a URL like `https://hranker-auth-api.onrender.com`.
-6. Use that base URL as your API base in the frontend (e.g. `NEXT_PUBLIC_API_URL=https://hranker-auth-api.onrender.com` and call `${API_URL}/api/auth/...`).
-
 ## API (backend)
 
 - `POST /api/auth/register` – body: `{ email, password }` → creates user (role `user`).
