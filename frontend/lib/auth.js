@@ -1,4 +1,4 @@
-const API = typeof window !== 'undefined' ? '' : '';
+const API = process.env.NEXT_PUBLIC_API_URL || '';
 
 export function getStored() {
   if (typeof window === 'undefined') return { token: null, role: null };
