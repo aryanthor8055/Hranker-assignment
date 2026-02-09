@@ -23,7 +23,7 @@ npm install
 npm run dev
 ```
 
-Runs on http://localhost:3000. Next.js rewrites /api to the backend.
+Runs on http://localhost:3000.
 
 ### Create an admin user (MongoDB)
 
@@ -44,6 +44,10 @@ node scripts/seedAdmin.js
 ```
 
 Script will prompt for email/password and create one admin user.
+
+**Admin credentials (for testing):**
+- Email: `Admin@gmail.com`
+- Password: `Admin123`
 
 ## Pages
 
